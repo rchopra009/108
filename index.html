@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>108 - AI-Powered Lift for India's Small Businesses</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, -10px); }
+            100% { transform: translate(0, 0px); }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .hero-image {
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <span class="text-3xl font-bold gradient-text">108</span>
+                    <span class="ml-2 text-gray-600 font-medium">AI for Small Businesses</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-purple-600 transition-colors">About</a>
+                    <a href="#solution" class="text-gray-600 hover:text-purple-600 transition-colors">Solution</a>
+                    <a href="#founder" class="text-gray-600 hover:text-purple-600 transition-colors">Founder</a>
+                    <a href="#contact" class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white animate-fade-in">
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        AI-Powered Lift for India's 
+                        <span class="text-yellow-300">Small Businesses</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-purple-100 leading-relaxed">
+                        "We strap an AI engine under every routine task, so a five-person shop can move like a Fortune 500."
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-rocket mr-2"></i>Start Free Audit
+                        </button>
+                        <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-colors">
+                            <i class="fas fa-play mr-2"></i>Watch Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="animate-slide-up floating">
+                    <img src="data:image/jpeg;base64,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
