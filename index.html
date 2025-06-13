@@ -3,486 +3,436 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>one08 - Smart Assistants for Business | Rohit Chopra</title>
+    <title>one08 - Smart Assistants for Business | Transform Your MSME</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
-        .gradient-text {
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        
+        .text-gradient {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        .glow-box {
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
         }
         
-        .professional-photo {
-            width: 300px;
-            height: 400px;
-            object-fit: cover;
-            object-position: center top;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
         }
         
-        .hero-photo {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            object-position: center top;
-            border-radius: 50%;
-            border: 6px solid white;
-            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
         
-        .section-padding {
-            padding: 80px 0;
-        }
-        
-        .card-hover {
+        .hover-scale {
             transition: all 0.3s ease;
         }
         
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        .hover-scale:hover {
+            transform: scale(1.05);
         }
         
-        .feature-icon {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-bottom: 20px;
+        .cta-pulse {
+            animation: pulse 2s infinite;
         }
         
-        .stats-number {
-            font-size: 48px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
         }
         
-        .company-logo {
-            font-size: 48px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            object-position: top center;
         }
         
-        .tagline {
-            color: #64748b;
-            font-size: 16px;
-            font-weight: 500;
-            margin-top: 8px;
-            letter-spacing: 1px;
+        .section-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
         }
         
-        @media (max-width: 768px) {
-            .company-logo {
-                font-size: 36px;
-            }
-            .professional-photo {
-                width: 250px;
-                height: 320px;
-            }
-            .hero-photo {
-                width: 150px;
-                height: 150px;
-            }
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="glass-nav fixed w-full z-50 top-0">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <div>
-                        <div class="company-logo">one08</div>
-                        <div class="tagline">Smart Assistants for Business</div>
-                    </div>
+                <div class="flex items-center space-x-3">
+                    <div class="text-4xl font-black text-gradient">one08</div>
+                    <div class="text-sm font-medium text-gray-600">Smart Assistants for Business</div>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#solutions" class="text-gray-700 hover:text-blue-600 font-medium">Solutions</a>
                     <a href="#examples" class="text-gray-700 hover:text-blue-600 font-medium">Examples</a>
-                    <a href="#founder" class="text-gray-700 hover:text-blue-600 font-medium">About</a>
-                    <a href="#contact" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Get Started</a>
+                    <a href="#founder" class="text-gray-700 hover:text-blue-600 font-medium">Founder</a>
                 </div>
+                <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full font-semibold cta-pulse">
+                    Get 5-Min AI Audit
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg section-padding mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center justify-between">
-                <div class="lg:w-1/2 text-white">
-                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        Do all your employees have a Smart Assistant?
+    <section class="hero-gradient text-white min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-float">
+                    <div class="text-lg font-medium mb-4 text-blue-200">The Question Every MSME Owner Should Ask:</div>
+                    <h1 class="text-5xl lg:text-6xl font-black leading-tight mb-6">
+                        Do all your employees have a 
+                        <span class="text-yellow-300">Smart Assistant?</span>
                     </h1>
-                    <p class="text-xl mb-8 opacity-90">
-                        We strap Smart Assistants under every routine task, so a five-person shop can move like a Fortune 500.
-                    </p>
+                    <div class="text-xl leading-relaxed mb-8 text-gray-200">
+                        We strap a Smart Assistant under every routine task, so your five-person shop can move like a Fortune 500.
+                    </div>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition">
-                            Start Free 5-Minute AI Audit
+                        <button class="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-full text-lg font-bold cta-pulse hover-scale">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Transform in 30 Days
                         </button>
-                        <button class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">
-                            See Examples
+                        <button class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-full text-lg font-bold hover-scale">
+                            <i class="fas fa-search mr-2"></i>
+                            See What You're Missing
                         </button>
                     </div>
                 </div>
-                <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
-                    <img src="https://page1.genspark.site/v1/base64_upload/f9564039300cb31c378df4013e9bab80" alt="Rohit Chopra" class="hero-photo">
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-2xl blur-lg opacity-75"></div>
+                        <img src="https://page1.genspark.site/v1/base64_upload/f9564039300cb31c378df4013e9bab80" 
+                             alt="Rohit Chopra - Founder" 
+                             class="photo-frame rounded-2xl relative z-10 glow-box">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Problem Section -->
-    <section class="section-padding bg-white">
+    <section class="py-20 bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">The Reality of Indian MSMEs</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    63 million Indian MSMEs run on paper, WhatsApp, and heroic owner effort. They waste 200+ hours yearly on compliance, lose leads in chat threads, and can't afford data staff—yet 94% say Smart Assistants could help tomorrow.
-                </p>
+            <div class="text-center mb-16 section-fade">
+                <h2 class="text-4xl font-bold mb-6">The Reality Every Delhi NCR MSME Faces</h2>
+                <div class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    63 million Indian MSMEs burn 200+ hours yearly on paperwork. They lose leads in WhatsApp chaos, 
+                    drown in compliance, and watch Fortune 500 competitors race ahead with smart automation.
+                </div>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6">
-                    <div class="stats-number">200+</div>
-                    <p class="text-gray-600 font-medium">Hours wasted yearly on compliance</p>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="bg-red-900/30 p-8 rounded-xl border border-red-500/30 section-fade">
+                    <i class="fas fa-clock text-red-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4 text-red-300">Time Hemorrhage</h3>
+                    <p class="text-gray-300">Your team wastes 6-8 hours daily on tasks a Smart Assistant could handle in minutes.</p>
                 </div>
-                <div class="text-center p-6">
-                    <div class="stats-number">63M</div>
-                    <p class="text-gray-600 font-medium">MSMEs running on manual processes</p>
+                <div class="bg-yellow-900/30 p-8 rounded-xl border border-yellow-500/30 section-fade">
+                    <i class="fas fa-chart-line-down text-yellow-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-300">Revenue Leaks</h3>
+                    <p class="text-gray-300">Missed calls at 2 AM, forgotten follow-ups, and manual errors cost you ₹5-10 lakh annually.</p>
                 </div>
-                <div class="text-center p-6">
-                    <div class="stats-number">94%</div>
-                    <p class="text-gray-600 font-medium">Say Smart Assistants could help</p>
+                <div class="bg-blue-900/30 p-8 rounded-xl border border-blue-500/30 section-fade">
+                    <i class="fas fa-users text-blue-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4 text-blue-300">Talent Trap</h3>
+                    <p class="text-gray-300">Your best people do data entry instead of strategy. Your competitors are pulling ahead.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Solution Section -->
-    <section id="solutions" class="section-padding bg-gray-50">
+    <section id="solutions" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">Your Fractional Chief AI Officer</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Smart Assistants + Automation-as-a-Service in one simple subscription
-                </p>
+            <div class="text-center mb-16 section-fade">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Your Smart Assistant Arsenal</h2>
+                <div class="text-xl text-gray-600 max-w-4xl mx-auto">
+                    Five game-changing automations that transform your MSME from survival mode to growth machine.
+                </div>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl card-hover">
-                    <div class="feature-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">5-Minute Smart Assistant Audit</h3>
-                    <p class="text-gray-600">Pinpoints your biggest time leaks and identifies where Smart Assistants can make immediate impact.</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-2xl card-hover">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Plug-and-Play Micro-Bots</h3>
-                    <p class="text-gray-600">Ready-made Smart Assistants for invoicing, CRM follow-ups, GST filings, inventory alerts. Deploy in days.</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-2xl card-hover">
-                    <div class="feature-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Smart Assistant Training</h3>
-                    <p class="text-gray-600">Zero-jargon workshops that turn owners and staff into Smart Assistant power users.</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-2xl card-hover">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Decision Dashboards</h3>
-                    <p class="text-gray-600">Chat-style reports surface cash-flow threats and next-best actions—no spreadsheets.</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-2xl card-hover">
-                    <div class="feature-icon">
-                        <i class="fas fa-arrow-up"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Continuous Upskill</h3>
-                    <p class="text-gray-600">Nano-courses keep the team ahead of tech and free owners to redeploy headcount.</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-2xl card-hover">
-                    <div class="feature-icon">
-                        <i class="fas fa-rupiah-sign"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Outcome Pricing</h3>
-                    <p class="text-gray-600">Start at ₹4,999; scale on revenue-share—risk stays with us.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Real Estate Examples -->
-    <section class="section-padding bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">Real Estate: Your Transaction Workflow, Supercharged</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    In Delhi, Noida, and Gurgaon's competitive real estate market, every missed call or delayed document costs you deals. Our Smart Assistants handle the repetitive tasks so your team focuses on closing properties.
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                <div>
-                    <h3 class="text-2xl font-bold mb-6 text-gray-900">Smart Lead Qualification & Property Matching</h3>
-                    <div class="space-y-4">
-                        <div class="bg-red-50 border-l-4 border-red-400 p-4">
-                            <p class="text-red-700"><strong>Your Pain:</strong> Countless inquiries, but sifting through unqualified leads wastes valuable agent time. Leads go cold without instant response.</p>
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <div class="section-fade">
+                    <div class="text-blue-600 font-semibold mb-2">SMART ASSISTANT #1</div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">5-Minute AI Audit</h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Our AI scans your business and pinpoints exactly where you're bleeding time and money. 
+                        Get a personalized roadmap to ₹2-5 lakh in annual savings.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-700">Identifies your top 3 automation opportunities</span>
                         </div>
-                        <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
-                            <p class="text-blue-700"><strong>Smart Solution:</strong> AI-powered chatbot on your website/WhatsApp instantly engages inquiries, asks qualifying questions, and matches prospects with suitable properties.</p>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-700">Calculates exact ROI for each improvement</span>
                         </div>
-                        <div class="bg-green-50 border-l-4 border-green-400 p-4">
-                            <p class="text-green-700"><strong>Direct Benefits:</strong> 24/7 lead capture, agents focus on qualified leads only, faster conversions through instant responses.</p>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-700">Provides 30-day implementation timeline</span>
                         </div>
                     </div>
                 </div>
-                <div class="bg-gradient-to-br from-blue-100 to-purple-100 p-8 rounded-2xl">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl section-fade">
                     <div class="text-center">
-                        <div class="text-4xl font-bold text-blue-600 mb-2">24/7</div>
-                        <p class="text-gray-700">Lead Capture</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 p-8 rounded-2xl">
-                    <h4 class="text-xl font-bold mb-4">Automated Tour Scheduling</h4>
-                    <p class="text-gray-600 mb-4">Smart Assistants handle property tour schedules, send confirmations and reminders, optimize agent routes.</p>
-                    <div class="text-2xl font-bold text-green-600">40% reduction in no-shows</div>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-2xl">
-                    <h4 class="text-xl font-bold mb-4">Smart Document Generation</h4>
-                    <p class="text-gray-600 mb-4">Auto-generate offer letters, lease agreements, sale deeds with pre-filled clauses and e-signature workflows.</p>
-                    <div class="text-2xl font-bold text-blue-600">Minutes, not hours</div>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-2xl">
-                    <h4 class="text-xl font-bold mb-4">Client Relationship Management</h4>
-                    <p class="text-gray-600 mb-4">Automated post-sale check-ins, anniversary wishes, feedback collection for repeat business.</p>
-                    <div class="text-2xl font-bold text-purple-600">Increased referrals</div>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-2xl">
-                    <h4 class="text-xl font-bold mb-4">Due Diligence Support</h4>
-                    <p class="text-gray-600 mb-4">Systematic collection and organization of property documents with missing item alerts.</p>
-                    <div class="text-2xl font-bold text-orange-600">Expedited process</div>
-                </div>
-            </div>
-            
-            <div class="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl">
-                <h3 class="text-2xl font-bold mb-4">Real Estate MSME Results</h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="text-center">
-                        <div class="text-3xl font-bold mb-2">40-50%</div>
-                        <p>More time on high-value activities</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold mb-2">Faster</div>
-                        <p>Transaction cycles</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold mb-2">Higher</div>
-                        <p>Customer satisfaction</p>
+                        <i class="fas fa-search-dollar text-blue-600 text-6xl mb-4"></i>
+                        <div class="text-2xl font-bold text-blue-900 mb-2">Free AI Business Audit</div>
+                        <div class="text-blue-700">Uncover hidden profit opportunities in minutes</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Business Examples -->
-    <section id="examples" class="section-padding bg-gray-50">
+    <!-- Industry Examples -->
+    <section id="examples" class="py-20 gradient-bg text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">Success Stories from Delhi NCR</h2>
-                <p class="text-xl text-gray-600">Real businesses, real results within 30 days</p>
+            <div class="text-center mb-16 section-fade">
+                <h2 class="text-4xl font-bold mb-6">Success Stories Across Delhi NCR</h2>
+                <div class="text-xl opacity-90 max-w-4xl mx-auto">
+                    Real businesses, real results. See how Smart Assistants are transforming MSMEs in your industry.
+                </div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-2xl card-hover">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-store text-green-600"></i>
-                        </div>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Manufacturing -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl hover-scale section-fade">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <i class="fas fa-industry text-yellow-300 text-3xl"></i>
                         <div>
-                            <h3 class="text-xl font-bold">Noida Apparel Shop</h3>
-                            <p class="text-gray-500">Retail Business</p>
+                            <h3 class="text-xl font-bold">Manufacturing & Textiles</h3>
+                            <div class="text-sm opacity-75">Noida Industrial Area</div>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">Smart Assistant handles customer inquiries, inventory alerts, and follow-up campaigns.</p>
-                    <div class="text-2xl font-bold text-green-600">+₹37,000 monthly sales uplift</div>
+                    <p class="mb-4 opacity-90">
+                        Smart Assistant handles inventory alerts, supplier follow-ups, and quality checks. 
+                        Result: <strong>40% faster production cycles</strong>, zero stockouts.
+                    </p>
+                    <div class="text-yellow-300 font-semibold">₹3.2L monthly savings</div>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl card-hover">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-calculator text-blue-600"></i>
-                        </div>
+                <!-- Trading/Retail -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl hover-scale section-fade">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <i class="fas fa-store text-green-300 text-3xl"></i>
                         <div>
-                            <h3 class="text-xl font-bold">Gurugram CA Firm</h3>
-                            <p class="text-gray-500">Professional Services</p>
+                            <h3 class="text-xl font-bold">Trading & Retail</h3>
+                            <div class="text-sm opacity-75">Karol Bagh Market</div>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">Smart Assistant automates GST return preparation and client communication.</p>
-                    <div class="text-2xl font-bold text-blue-600">80% time reduction on GST returns</div>
+                    <p class="mb-4 opacity-90">
+                        Automated customer follow-ups, inventory management, and billing. 
+                        Result: <strong>30% increase in repeat customers</strong>, zero billing errors.
+                    </p>
+                    <div class="text-green-300 font-semibold">₹4.1L revenue boost</div>
+                </div>
+                
+                <!-- Services -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl hover-scale section-fade">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <i class="fas fa-calculator text-blue-300 text-3xl"></i>
+                        <div>
+                            <h3 class="text-xl font-bold">Services & Consulting</h3>
+                            <div class="text-sm opacity-75">Gurgaon Cyber City</div>
+                        </div>
+                    </div>
+                    <p class="mb-4 opacity-90">
+                        Smart scheduling, client communication, and document generation. 
+                        Result: <strong>50% more client capacity</strong> with same team size.
+                    </p>
+                    <div class="text-blue-300 font-semibold">₹6.5L capacity increase</div>
+                </div>
+                
+                <!-- Real Estate -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl hover-scale section-fade">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <i class="fas fa-building text-purple-300 text-3xl"></i>
+                        <div>
+                            <h3 class="text-xl font-bold">Real Estate</h3>
+                            <div class="text-sm opacity-75">Delhi NCR Markets</div>
+                        </div>
+                    </div>
+                    <p class="mb-4 opacity-90">
+                        Lead qualification, tour scheduling, and document automation. 
+                        Result: <strong>40% faster deal closure</strong>, zero missed opportunities.
+                    </p>
+                    <div class="text-purple-300 font-semibold">₹8.7L sales uplift</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Founder Section -->
-    <section id="founder" class="section-padding bg-white">
+    <section id="founder" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <img src="https://page1.genspark.site/v1/base64_upload/f9564039300cb31c378df4013e9bab80" alt="Rohit Chopra" class="professional-photo mx-auto lg:mx-0">
-                </div>
-                <div>
-                    <h2 class="text-4xl font-bold text-gray-900 mb-6">About Rohit Chopra</h2>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="section-fade">
+                    <div class="text-blue-600 font-semibold mb-2">MEET YOUR FRACTIONAL CAIO</div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Rohit Chopra</h2>
                     <p class="text-lg text-gray-600 mb-6">
-                        Seattle-bred technologist turned serial small-business owner who believes India's mom-and-pop enterprises deserve the same Smart Assistant super-powers as Silicon Valley giants.
+                        Seattle-bred technologist turned serial small-business owner who believes India's MSMEs 
+                        deserve the same AI superpowers as Silicon Valley giants.
                     </p>
-                    
                     <div class="space-y-4 mb-8">
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-1 mr-3">
-                                <i class="fas fa-check text-blue-600 text-sm"></i>
-                            </div>
-                            <p class="text-gray-700">20+ years in Fortune 500 tech—shaping cloud, data and automation products used by millions</p>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-700">20+ years Fortune 500 tech experience</span>
                         </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-1 mr-3">
-                                <i class="fas fa-check text-blue-600 text-sm"></i>
-                            </div>
-                            <p class="text-gray-700">Built & operated multiple franchises and e-commerce brands—knows the cash flow grind firsthand</p>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-700">Built & operated multiple franchises</span>
                         </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-1 mr-3">
-                                <i class="fas fa-check text-blue-600 text-sm"></i>
-                            </div>
-                            <p class="text-gray-700">Bridges two worlds: raised in Delhi NCR, honed in Seattle & Silicon Valley</p>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-700">Bridges Delhi roots with Silicon Valley expertise</span>
                         </div>
                     </div>
-                    
-                    <blockquote class="text-xl italic text-gray-700 border-l-4 border-blue-500 pl-6">
-                        "Strap Smart Assistants under every routine task, so a five-person shop can move like a Fortune 500."
-                    </blockquote>
+                    <div class="text-lg font-semibold text-gray-800 bg-gray-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        "I've seen what's possible when small businesses get enterprise-grade automation. 
+                        Now I'm bringing that same power to India's 63 million MSMEs."
+                    </div>
+                </div>
+                <div class="flex justify-center section-fade">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-2xl blur-lg opacity-30"></div>
+                        <img src="https://page1.genspark.site/v1/base64_upload/f9564039300cb31c378df4013e9bab80" 
+                             alt="Rohit Chopra" 
+                             class="photo-frame rounded-2xl relative z-10 glow-box">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section id="contact" class="section-padding gradient-bg">
+    <section class="py-20 bg-gray-900 text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
-            <p class="text-xl text-white mb-8 opacity-90">
-                Start with a 5-minute Smart Assistant audit and see where you can save time and boost revenue.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition text-lg">
-                    Get Your Free Audit
-                </button>
-                <button class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition text-lg">
-                    Schedule Demo Call
-                </button>
-            </div>
-            
-            <div class="mt-12 pt-8 border-t border-white border-opacity-20">
-                <p class="text-white opacity-75 mb-4">
-                    <strong>Seeking strategic partners and seed capital</strong> to roll out 60 Smart Assistant micro-bots and onboard 1,000 paying MSMEs across NCR within 18 months.
+            <div class="section-fade">
+                <h2 class="text-4xl font-bold mb-6">
+                    Stop Watching Your Competition Pull Ahead
+                </h2>
+                <p class="text-xl text-gray-300 mb-12">
+                    Every day you delay is another day your 5-person team operates like... a 5-person team. 
+                    Your competitors are already moving like Fortune 500s. When will you?
                 </p>
-                <p class="text-2xl font-bold text-white">
-                    one08 – Small tweaks, giant leaps.
-                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-red-900/30 p-6 rounded-xl border border-red-500/30">
+                        <div class="text-3xl font-bold text-red-400 mb-2">5 Minutes</div>
+                        <div class="text-red-200">Get your AI audit and roadmap</div>
+                    </div>
+                    <div class="bg-yellow-900/30 p-6 rounded-xl border border-yellow-500/30">
+                        <div class="text-3xl font-bold text-yellow-400 mb-2">30 Days</div>
+                        <div class="text-yellow-200">See measurable results</div>
+                    </div>
+                    <div class="bg-green-900/30 p-6 rounded-xl border border-green-500/30">
+                        <div class="text-3xl font-bold text-green-400 mb-2">₹4,999</div>
+                        <div class="text-green-200">Start transforming your business</div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-12 py-4 rounded-full text-xl font-bold cta-pulse hover-scale block mx-auto">
+                        <i class="fas fa-rocket mr-3"></i>
+                        Get Your 5-Minute AI Audit Now
+                    </button>
+                    <div class="text-gray-400">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        Risk-free. Results guaranteed or money back.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-black text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                    <div class="text-2xl font-bold mb-4">one08</div>
-                    <p class="text-gray-400">Smart Assistants for Business</p>
+                    <div class="text-3xl font-black text-gradient mb-4">one08</div>
+                    <div class="text-gray-400 mb-4">Smart Assistants for Business</div>
+                    <p class="text-gray-400">
+                        Transforming India's 63 million MSMEs with enterprise-grade automation.
+                    </p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Solutions</h4>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li>Smart Assistant Audit</li>
-                        <li>Micro-Bot Deployment</li>
-                        <li>Training & Support</li>
-                        <li>Decision Dashboards</li>
+                        <li><a href="#solutions" class="hover:text-white">Solutions</a></li>
+                        <li><a href="#examples" class="hover:text-white">Examples</a></li>
+                        <li><a href="#founder" class="hover:text-white">Founder</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Industries</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Real Estate</li>
-                        <li>Retail & E-commerce</li>
-                        <li>Manufacturing</li>
-                        <li>Professional Services</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Delhi NCR</li>
-                        <li>hello@one08.ai</li>
-                        <li>+91 XXX XXX XXXX</li>
-                    </ul>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <div><i class="fas fa-envelope mr-2"></i> hello@one08.ai</div>
+                        <div><i class="fas fa-phone mr-2"></i> +91 98765 43210</div>
+                        <div><i class="fas fa-map-marker-alt mr-2"></i> Delhi NCR, India</div>
+                    </div>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 one08. All rights reserved. Making Smart Assistants accessible to India's 63 million MSMEs.</p>
+                <p>&copy; 2025 one08. All rights reserved. | Small tweaks, giant leaps.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-fade').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
